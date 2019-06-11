@@ -1,16 +1,15 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
 
 ruby '2.3.4'
 
 gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
-# gem 'jbuilder', '~> 2.5'
-# gem 'redis', '~> 4.0'
-# gem 'bcrypt', '~> 3.1.7'
-# gem 'mini_magick', '~> 4.8'
-# gem 'capistrano-rails', group: :development
+gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
