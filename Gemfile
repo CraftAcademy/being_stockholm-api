@@ -20,6 +20,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'coveralls', require: false
 end
 
 group :development do
