@@ -7,7 +7,7 @@
 Being Stockholm engages citizens to digitally share, map and illustrate how they use the region. Residents shares geotagged photos of how they work and play along with a short caption, so we can produce:
 * A data point map to illustrate where Stockholmers work and play
 * A word cloud map to describe how Stockholmers work and play
-* A curated map of recommendations by Stockholmers for Stockholmers.
+* A curated map of recommendations by Stockholmers for Stockholmers
 
 We want to inspire residents to explore new parts of the city and try out activities. Everyone can share their experiences, regardless of how long they have lived in Stockholm and their language.
 
