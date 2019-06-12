@@ -1,5 +1,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/being_stockholm-api/badge.svg?branch=development)](https://coveralls.io/github/CraftAcademy/being_stockholm-api?branch=development)
 [![Build Status](https://semaphoreci.com/api/v1/craftacademy/being_stockholm-api/branches/development/badge.svg)](https://semaphoreci.com/craftacademy/being_stockholm-api)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/955f6b7f9b6a4a75a3c1541c4cc323d2)](https://www.codacy.com/app/april_cohort/being_stockholm-api?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CraftAcademy/being_stockholm-api&amp;utm_campaign=Badge_Grade)
 
 # Project Title
 
