@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  
+
   describe "DB columns" do
     it { is_expected.to have_db_column :id }
     it { is_expected.to have_db_column :caption }
@@ -21,7 +21,7 @@ RSpec.describe Post, type: :model do
 
   describe "Factory" do
     it "should have valid factory" do
-      expect(FactoryBot.create(:article)).to be_valid
+      expect(FactoryBot.create(:post)).to be_valid
     end
   end
 
