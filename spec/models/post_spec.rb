@@ -12,11 +12,12 @@ RSpec.describe Post, type: :model do
   end
 
   describe "Validations" do
-    it { is_expected.to have_validate_presence_of(:caption) }
-    it { is_expected.to have_validate_presence_of(:status) }
-    it { is_expected.to have_validate_presence_of(:category) }
-    it { is_expected.to have_validate_presence_of(:latitude) }
-    it { is_expected.to have_validate_presence_of(:longitude) }
+    it { is_expected.to validate_presence_of(:caption) }
+    it { is_expected.to validate_presence_of(:status) }
+    it { is_expected.to validate_presence_of(:category) }
+    it { is_expected.to validate_presence_of(:latitude) }
+    it { is_expected.to validate_presence_of(:longitude) }
+    it { is_expected.to validate_length_of(:caption).is_at_most(140) }
   end
 
   describe "Factory" do
