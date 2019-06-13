@@ -26,4 +26,11 @@ RSpec.describe Post, type: :model do
     end
   end
 
+  describe "Attachment" do
+    it "is valid" do
+      subject.image.attach(io: File.open('spec/fixtures/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
+      expect(subject.image).to be_attached
+    end
+  end
+
 end
