@@ -40,7 +40,6 @@ let(:headers) { { HTTP_ACCEPT: 'application/json' } }
           post: {
             image: ('spec/fixtures/dummy_image.jpg'),
             caption: 'Lorem ipsum dolor',
-            status: 'pending',
             category: 'work',
             longitude: 53.06,
             latitude: 18.03,
@@ -51,6 +50,7 @@ let(:headers) { { HTTP_ACCEPT: 'application/json' } }
       it "creates a new post" do
         expect(json_response["message"]).to eq "Successfully created"
         expect(response.status).to eq 200
+        
       end
 
       it "sends back into the response the newly created post information" do

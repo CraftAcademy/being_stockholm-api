@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_13_084602) do
+ActiveRecord::Schema.define(version: 2019_06_13_140828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_06_13_084602) do
 
   create_table "posts", force: :cascade do |t|
     t.string "caption"
-    t.integer "status"
+    t.integer "status", default: 1
     t.integer "category"
     t.decimal "latitude"
     t.decimal "longitude"

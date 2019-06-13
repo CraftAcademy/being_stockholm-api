@@ -13,7 +13,6 @@ RSpec.describe Post, type: :model do
 
   describe "Validations" do
     it { is_expected.to validate_presence_of(:caption) }
-    it { is_expected.to validate_presence_of(:status) }
     it { is_expected.to validate_presence_of(:category) }
     it { is_expected.to validate_presence_of(:latitude) }
     it { is_expected.to validate_presence_of(:longitude) }

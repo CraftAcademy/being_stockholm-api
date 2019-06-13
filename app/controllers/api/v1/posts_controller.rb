@@ -17,7 +17,7 @@ class Api::V1::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:caption, :status, :category, :longitude, :latitude, keys: [:image])
+    params.require(:post).permit(:caption, :category, :longitude, :latitude, keys: [:image])
   end 
  
 end
