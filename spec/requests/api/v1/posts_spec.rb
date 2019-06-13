@@ -2,6 +2,8 @@ RSpec.describe Api::V1::PostsController, type: :request do
 let(:headers) { { HTTP_ACCEPT: 'application/json' } }
 
   describe "GET /api/v1/posts" do
+    posts= Post.all
+
     before do
       5.times { FactoryBot.create(:post) }
     end
@@ -19,13 +21,30 @@ let(:headers) { { HTTP_ACCEPT: 'application/json' } }
     it "has correct keys in the response" do
       get "/api/v1/posts", headers: headers
 
-      posts= Post.all
-      
       posts.each do |post|
         expect(json_response[posts.index(post)]).to include('id')
         expect(json_response[posts.index(post)]).to include('status')
         expect(json_response[posts.index(post)]).to include('latitude')
         expect(json_response[posts.index(post)]).to include('longitude')
+      end
+    end
+
+    it "has correct status on response" do
+      get "/api/v1/posts", headers: headers
+     
+      posts.each do |post|
+        expect(post.published?).to be(false)
+        expect(post.pending?).to be(true)
+        expect(post.declined?).to be(false)
+      end
+    end
+
+    it "has correct category on response" do
+      get "/api/v1/posts", headers: headers
+     
+      posts.each do |post|
+        expect(post.work?).to be(false)
+        expect(post.play?).to be(true)
       end
     end
   end

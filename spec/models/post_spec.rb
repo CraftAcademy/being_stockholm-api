@@ -20,6 +20,10 @@ RSpec.describe Post, type: :model do
     it { is_expected.to validate_length_of(:caption).is_at_most(140) }
   end
 
+  describe "Association" do
+    it { is_expected.to have_one(:image_attachment) }
+  end
+
   describe "Factory" do
     it "should have valid factory" do
       expect(FactoryBot.create(:post)).to be_valid
@@ -32,5 +36,4 @@ RSpec.describe Post, type: :model do
       expect(subject.image).to be_attached
     end
   end
-
 end
