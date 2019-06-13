@@ -7,8 +7,9 @@ class Api::V1::PostsController < ApplicationController
 
   def create
     post = Post.create(post_params)
+  
     if post.persisted?
-      render json: { message: 'Successfully created', id: post.id }
+      render json: { message: 'Successfully created', id: post.id}
     else
       render json: { error: post.errors.full_messages }, status: 422
     end
