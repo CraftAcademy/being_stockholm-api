@@ -56,7 +56,7 @@ Unit and request tests can be found in the `spec/models` and `spec/requests` fol
 ### CLIENT
 The Client part of the application was acceptance tested using [Cypress](https://www.cypress.io/) and component tested using [Enzyme](https://github.com/airbnb/enzyme).
 
-Tp check the quality of the codebase we used [Codacy](https://www.codacy.com/).
+To check the quality of the codebase we used [Codacy](https://www.codacy.com/).
 
 To be able to run the tests, run `npm install` in your terminal as soon as you fork this repository.
 
@@ -66,10 +66,11 @@ Acceptance and component tests can be found in the `cypress/integration` and `sr
 
 # Built With
 
-* API with [Ruby on Rails](https://rubyonrails.org/) version 5.2.3
-* API with [Ruby](https://www.ruby-lang.org/en/) version 2.4.1
-* Client with [React](https://reactjs.org/)
-* Client was styled using [Semantic UI](https://react.semantic-ui.com/)
+* API with [Ruby on Rails](https://rubyonrails.org/) version 5.2.3.
+* API with [Ruby](https://www.ruby-lang.org/en/) version 2.4.1.
+* Client with [React](https://reactjs.org/).
+* Client was styled using [Semantic UI](https://react.semantic-ui.com/).
+* Client uses theming functionality of Semantic-UI precompiled with [gulp](https://gulpjs.com/). All relevant files can be found in `src/semantic` folder.
 
 # Authors
 
