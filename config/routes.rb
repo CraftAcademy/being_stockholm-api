@@ -3,5 +3,9 @@ Rails.application.routes.draw do
     namespace :v0 do
       resources :pings, only: [:index], constraints: { format: 'json' }
     end
+
+    namespace :v1 do
+      resources :posts, only: [:index]
+    end
   end
 end
