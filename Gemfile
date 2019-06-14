@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rack-cors', require: 'rack/cors'
 gem 'active_model_serializers'
+gem 'aws-sdk-s3'
 
 group :development, :test do
   gem 'factory_bot_rails'
