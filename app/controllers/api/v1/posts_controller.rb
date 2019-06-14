@@ -25,8 +25,7 @@ class Api::V1::PostsController < ApplicationController
 
   def attach_image  
     if params['image'] && params['image'].present?
-      DecodeImageService.attach_image(params['image']), @post.image)
+      DecodeImageService.attach_image(params['image'], @post.image)
     end
-  end
- 
+  end 
 end
