@@ -10,7 +10,7 @@ class Api::V1::PostsController < ApplicationController
     attach_image
 
     if @post.persisted? && @post.image.attached?
-      render json: { message: 'Successfully created', id: @post.id, image: @post.image.service_url(expires_in: 1.hour, disposition: "inline") }
+      render json: { message: 'Successfully created', id: @post.id }
     else
       render json: { error: @post.errors.full_messages }, status: 422
     end
