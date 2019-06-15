@@ -5,6 +5,9 @@ class Api::V1::PostsController < ApplicationController
     render json: posts, each_serializer: Posts::IndexSerializer
   end
 
+  def show
+  end
+
   def create
     @post = Post.create(post_params)
     attach_image
