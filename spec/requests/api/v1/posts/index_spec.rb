@@ -9,7 +9,6 @@ let(:headers) { { HTTP_ACCEPT: 'application/json' } }
 
     it "returns a collection of posts" do
       get "/api/v1/posts", headers: headers
-      binding.pry
       expect(json_response.count).to eq 5
     end
 
