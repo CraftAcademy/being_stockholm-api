@@ -1,19 +1,18 @@
 RSpec.describe Api::V1::PostsController, type: :request do
+
   let(:headers) { { HTTP_ACCEPT: 'application/json' } }
   let(:image) {
     {type: "image/png",
     encoder: "name=carbon (5).png;base64",
     data: "iVBORw0KGgoAAAANSUhEUgAABjAAAAOmCAYAAABFYNwHAAAgAElEQVR4XuzdB3gU1cLG8Te9EEgISQi9I71KFbBXbFixN6zfvSiIjSuKInoVFOyIDcWuiKiIol4Q6SBVOtI7IYSWBkm+58y6yW4a2SS7O4n/eZ7vuWR35pwzvzO76zf",
     extension: "png" }
-  }
-  
+  }  
   
   describe "GET /api/v1/posts/id" do
     before do
       post = FactoryBot.create(:post)
       DecodeImageService.attach_image(image, post.image)
       get "/api/v1/posts/"+"#{post.id}", headers: headers
-      #binding.pry
     end
     
     it "returns a success response" do
@@ -21,9 +20,9 @@ RSpec.describe Api::V1::PostsController, type: :request do
     end
 
     it "returns a specific post" do
-      expect(json_response["id"]).to eq post.id
+      post = Post.last
+      expect(json_response['post']['id']).to eq post.id
     end
 
-  end
-  
+  end  
 end
