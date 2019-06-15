@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     end
 
     namespace :v1 do
-      resources :posts, only: [:index]
+      resources :posts, only: [:index, :create]
     end
   end
 end

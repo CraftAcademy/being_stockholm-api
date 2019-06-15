@@ -1,3 +1,3 @@
 class Posts::IndexSerializer < ActiveModel::Serializer
-  attributes :id, :status, :longitude, :latitude
+  attributes :id, :status, :category, :longitude, :latitude
 end
