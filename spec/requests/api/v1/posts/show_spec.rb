@@ -21,7 +21,8 @@ RSpec.describe Api::V1::PostsController, type: :request do
 
     it "returns a specific post" do
       post = Post.last
-      expect(json_response['post']['id']).to eq post.id
+      binding.pry
+      expect(json_response['id']).to eq post.id
     end
 
   end  

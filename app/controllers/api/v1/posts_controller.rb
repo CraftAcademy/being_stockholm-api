@@ -7,7 +7,7 @@ class Api::V1::PostsController < ApplicationController
 
   def show
     post = Post.find(params[:id])
-    render json: { post: post }
+    render json: post, serializer: Posts::ShowSerializer
   end
 
   def create
