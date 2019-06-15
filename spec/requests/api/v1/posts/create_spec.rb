@@ -16,8 +16,8 @@ RSpec.describe Api::V1::PostsController, type: :request do
             category: 'work',
             longitude: 53.06,
             latitude: 18.03,
-            }, 
-            headers: headers
+        }, 
+        headers: headers
       end
 
       it "creates a new post" do
@@ -44,8 +44,8 @@ RSpec.describe Api::V1::PostsController, type: :request do
           category: 'work',
           longitude: 53.06,
           latitude: 18.03,
-          },
-          headers: headers
+        },
+        headers: headers
 
         expect(json_response['error']).to eq ["Caption can't be blank"]
         expect(response.status).to eq 422
@@ -64,8 +64,8 @@ RSpec.describe Api::V1::PostsController, type: :request do
           category: 'work',
           longitude: 53.06,
           latitude: 18.03,
-          },
-          headers: headers
+        },
+        headers: headers
 
         expect(json_response['error']).to eq ["Caption is too long (maximum is 140 characters)"]
       end
