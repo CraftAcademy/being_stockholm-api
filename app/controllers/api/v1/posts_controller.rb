@@ -8,10 +8,8 @@ class Api::V1::PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     encoded_image = Base64.encode64(File.open(ActiveStorage::Blob.service.send(:path_for, @post.image.blob.key), "rb").read)
-    #binding.pry
-    render json: {post: @post, image: encoded_image}
-    #@post, serializer: Posts::ShowSerializer, meta: { image: encoded_image }
-    #binding.pry 
+    post_json = Posts::ShowSerializer.new(@post)
+    render json: { post: post_json, image: encoded_image }
   end
 
   def create
@@ -23,7 +21,10 @@ class Api::V1::PostsController < ApplicationController
     else
       render json: { error: @post.errors.full_messages }, status: 422
     end
+
   end
+
+
 
   private
 
@@ -31,10 +32,10 @@ class Api::V1::PostsController < ApplicationController
     params.permit(:caption, :category, :longitude, :latitude, keys: [:image])
   end 
 
-
   def attach_image  
     if params['image'] && params['image'].present?
       DecodeImageService.attach_image(params['image'], @post.image)
     end
-  end 
+  end
+
 end
