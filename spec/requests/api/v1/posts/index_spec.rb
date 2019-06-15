@@ -31,8 +31,3 @@ let(:headers) { { HTTP_ACCEPT: 'application/json' } }
     end
   end
 end
-
-
-
-
-  
