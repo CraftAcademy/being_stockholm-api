@@ -6,18 +6,18 @@ RSpec.describe Api::V1::PostsController, type: :request do
     describe "successfully" do
       before do
         post "/api/v1/posts", params: {
-            image: {
-              type: "image/png",
-              encoder: "name=carbon (5).png;base64",
-              data: "iVBORw0KGgoAAAANSUhEUgAABjAAAAOmCAYAAABFYNwHAAAgAElEQVR4XuzdB3gU1cLG8Te9EEgISQi9I71KFbBXbFixN6zfvSiIjSuKInoVFOyIDcWuiKiIol4Q6SBVOtI7IYSWBkm+58y6yW4a2SS7O4n/eZ7vuWR35pwzvzO76zf",
-              extension: "png" 
-            },
-            caption: 'Lorem ipsum dolor',
-            category: 'work',
-            longitude: 53.06,
-            latitude: 18.03,
-            }, 
-            headers: headers
+          image: {
+            type: "image/png",
+            encoder: "name=carbon (5).png;base64",
+            data: "iVBORw0KGgoAAAANSUhEUgAABjAAAAOmCAYAAABFYNwHAAAgAElEQVR4XuzdB3gU1cLG8Te9EEgISQi9I71KFbBXbFixN6zfvSiIjSuKInoVFOyIDcWuiKiIol4Q6SBVOtI7IYSWBkm+58y6yW4a2SS7O4n/eZ7vuWR35pwzvzO76zf",
+            extension: "png" 
+          },
+          caption: 'Lorem ipsum dolor',
+          category: 'work',
+          longitude: 53.06,
+          latitude: 18.03,
+        }, 
+        headers: headers
       end
 
       it "creates a new post" do
@@ -44,8 +44,8 @@ RSpec.describe Api::V1::PostsController, type: :request do
           category: 'work',
           longitude: 53.06,
           latitude: 18.03,
-          },
-          headers: headers
+        },
+        headers: headers
 
         expect(json_response['error']).to eq ["Caption can't be blank"]
         expect(response.status).to eq 422
@@ -64,8 +64,8 @@ RSpec.describe Api::V1::PostsController, type: :request do
           category: 'work',
           longitude: 53.06,
           latitude: 18.03,
-          },
-          headers: headers
+        },
+        headers: headers
 
         expect(json_response['error']).to eq ["Caption is too long (maximum is 140 characters)"]
       end
