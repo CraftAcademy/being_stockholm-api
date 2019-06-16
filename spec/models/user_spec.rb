@@ -24,11 +24,13 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_db_column :tokens }
     it { is_expected.to have_db_column :created_at }
     it { is_expected.to have_db_column :updated_at }
+    it { is_expected.to have_db_column :level }
   end
 
   describe 'Validations' do
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_confirmation_of(:password) }
+    it { is_expected.to validate_presence_of(:level )}
 
     context 'should not have an invalid email address' do
       emails = ['stefan@ craft.com', '@felix.com', 'test mail@gmail.com',

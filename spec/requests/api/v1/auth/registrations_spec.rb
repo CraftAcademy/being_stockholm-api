@@ -5,7 +5,8 @@ RSpec.describe 'User Registration', type: :request do
     it 'returns a user and a token' do
       post '/api/v1/auth', params: { email: 'felix@craft.se',
                                      password: 'password',
-                                     password_confirmation: 'password'
+                                     password_confirmation: 'password',
+                                     level: 'newbie'
                                   }, headers: headers
 
       expect(json_response['status']).to eq 'success'
