@@ -6,7 +6,7 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    post = Post.find(params[:id])
     render json: post, serializer: Posts::ShowSerializer
   end
 
