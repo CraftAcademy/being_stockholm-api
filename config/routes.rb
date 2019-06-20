@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     end
 
     namespace :v1 do
-      resources :posts, only: [:index, :create]
       mount_devise_token_auth_for 'User', at: 'auth', skip: [:omniauth_callbacks]
+      resources :posts, only: [:index, :create, :show]
     end
   end
 end

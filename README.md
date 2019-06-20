@@ -1,6 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/being_stockholm-api/badge.svg?branch=development)](https://coveralls.io/github/CraftAcademy/being_stockholm-api?branch=development)
 [![Build Status](https://semaphoreci.com/api/v1/craftacademy/being_stockholm-api/branches/development/badge.svg)](https://semaphoreci.com/craftacademy/being_stockholm-api)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/955f6b7f9b6a4a75a3c1541c4cc323d2)](https://www.codacy.com/app/april_cohort/being_stockholm-api?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CraftAcademy/being_stockholm-api&amp;utm_campaign=Badge_Grade)
 
 # Project Title
 
@@ -54,15 +53,13 @@ Unit and request tests can be found in the `spec/models` and `spec/requests` fol
 [Semaphore CI](https://semaphoreci.com/) was used for continious integration.
 
 ### CLIENT
-The Client part of the application was acceptance tested using [Cypress](https://www.cypress.io/) and component tested using [Enzyme](https://github.com/airbnb/enzyme).
-
-To check the quality of the codebase we used [Codacy](https://www.codacy.com/).
+The Client part of the application was acceptance tested using [Cypress](https://www.cypress.io/).
 
 To be able to run the tests, run `npm install` in your terminal as soon as you fork this repository.
 
-After that, use `npm run cy:open` to launch a local server instance of the application and run all acceptance tests of Cypress. To run the component tests you can use `npm run test`.
+After that, use `npm run cy:open` to launch a local server instance of the application and run all acceptance tests of Cypress.
 
-Acceptance and component tests can be found in the `cypress/integration` and `src/__tests__` folders respectively.
+Acceptance tests can be found in the `cypress/integration` folder.
 
 # Built With
 
