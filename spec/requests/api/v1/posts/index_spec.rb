@@ -1,10 +1,11 @@
 RSpec.describe Api::V1::PostsController, type: :request do
-let(:headers) { { HTTP_ACCEPT: 'application/json' } }
+  let(:user) { FactoryBot.create(:user) }
+  let(:headers) { { HTTP_ACCEPT: 'application/json' } }
 
   describe "GET /api/v1/posts" do
 
     before do
-      5.times { FactoryBot.create(:post) }
+      5.times { FactoryBot.create(:post, user_id: user.id) }
     end
 
     it "returns a collection of posts" do
