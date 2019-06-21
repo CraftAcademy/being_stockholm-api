@@ -1,5 +1,8 @@
 RSpec.describe Api::V1::PostsController, type: :request do
-let(:headers) { { HTTP_ACCEPT: 'application/json' } }
+let(:user) { FactoryBot.create(:user) }
+let(:credentials) { user.create_new_auth_token }
+let(:headers) { { HTTP_ACCEPT: "application/json" }.merge!(credentials) }
+let(:not_headers) { {HTTP_ACCEPT: "application/json"} }
   
   describe "GET /api/v1/posts/id" do
     before do
