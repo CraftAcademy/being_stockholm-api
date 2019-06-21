@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   has_one_attached :image
+  belongs_to :user
 
   enum status: [:published, :pending, :declined]
   enum category: [:work, :play]
