@@ -1,5 +1,5 @@
 RSpec.describe Api::V1::PostsController, type: :request do
-  let(:user) { FactoryBot.create(:user) }
+  let(:user) { FactoryBot.create(:user, email: 'george@mail.com') }
   let(:admin) { FactoryBot.create(:user, admin: true, email: 'noel@craft.com') }
   let(:post) { FactoryBot.create(:post) }
   let(:credentials) { user.create_new_auth_token }
