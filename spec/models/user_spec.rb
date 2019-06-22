@@ -25,6 +25,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_db_column :created_at }
     it { is_expected.to have_db_column :updated_at }
     it { is_expected.to have_db_column :level }
+    it { is_expected.to have_db_column :admin }
   end
 
   describe 'Validations' do
