@@ -10,7 +10,7 @@ RSpec.describe Api::V1::PostsController, type: :request do
   describe "PATCH /api/v1/posts/id" do
 
     it "updates status if user is admin" do
-      patch "/api/v1/posts/"+"#{post.id}", params: {
+      patch "/api/v1/posts/#{post.id}", params: {
         status: 'published'
       },
       headers: admin_headers
@@ -21,7 +21,7 @@ RSpec.describe Api::V1::PostsController, type: :request do
     end
 
     it "does not update status if user does not have admin privileges" do
-      patch "/api/v1/posts/"+"#{post.id}", params: {
+      patch "/api/v1/posts/#{post.id}", params: {
         status: 'published'
       }, 
       headers: headers
