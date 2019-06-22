@@ -88,3 +88,16 @@ This project is licensed under the [MIT](https://opensource.org/licenses/MIT) li
 * [Rails Guides](https://guides.rubyonrails.org/index.html) for the detailed documentation.
 * [Stack Overflow](https://stackoverflow.com/) for the guidance during the "difficult" times during development.
 * [React documentation](https://reactjs.org/docs/getting-started.html) for the support we needed on related issues.
+
+# Special Appreciations
+3 months ago, we embarked on a journey to the unknown universe of coding. It was a demanding experience, that made us stronger and substantially more competent and knowledgeable, when it comes to modern web development practices.
+
+That journey was made possible and smoother, because of the support from our coaches in Craft Academy. They were always next to us, helping us, mentoring us, teaching us, even during weekends, sacrificing their personal time.
+
+Thank you:
+* [Oliver](https://github.com/oliverochman)
+* [Thomas](https://github.com/tochman)
+* [Faraz](https://github.com/faraznaeem)
+* [Noel](https://github.com/Noelryn)
+* [Greg](https://github.com/GergKllai1)
+* [Adi](https://github.com/kianaditya)
