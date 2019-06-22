@@ -3,6 +3,7 @@ class Posts::ShowSerializer < ActiveModel::Serializer
 
   attributes :id, :status, :caption, :category, :longitude, :latitude, :created_at
   attribute :image
+  belongs_to :user, serializer: Users::Serializer
 
   def image
     if Rails.env.test?

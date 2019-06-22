@@ -17,6 +17,7 @@ let(:not_headers) { {HTTP_ACCEPT: "application/json"} }
         category: 'work',
         longitude: 53.06,
         latitude: 18.03,
+        user_id: user.id
       }, 
       headers: headers
       get "/api/v1/posts/"+"#{Post.last.id}", headers: headers

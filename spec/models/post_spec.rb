@@ -35,4 +35,8 @@ RSpec.describe Post, type: :model do
       expect(subject.image).to be_attached
     end
   end
+
+  describe "Association" do
+    it { is_expected.to belong_to(:user) }
+  end
 end

@@ -56,4 +56,8 @@ RSpec.describe User, type: :model do
       expect(create(:user)).to be_valid
     end
   end
+
+  describe "Relations" do
+    it { is_expected.to have_many(:posts) }
+  end
 end 
