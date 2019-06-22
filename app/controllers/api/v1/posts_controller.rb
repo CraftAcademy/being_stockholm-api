@@ -20,10 +20,11 @@ class Api::V1::PostsController < ApplicationController
     else
       render json: { error: @post.errors.full_messages }, status: 422
     end
-
   end
 
-
+  def update
+    post = Post.find(params[:id])
+  end
 
   private
 
