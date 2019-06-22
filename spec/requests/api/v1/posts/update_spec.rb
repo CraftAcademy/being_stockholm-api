@@ -17,6 +17,7 @@ RSpec.describe Api::V1::PostsController, type: :request do
       post.reload
       expect(response.status).to eq 200
       expect(post.status).to eq 'published'
+      expect(json_response['message']).to eq 'Post status successfully updated'
     end
 
     it "does not update status if user does not have admin privileges" do
@@ -27,6 +28,7 @@ RSpec.describe Api::V1::PostsController, type: :request do
       post.reload
       expect(response.status).to eq 422
       expect(post.status).to eq 'pending'
+      expect(json_response['error']).to eq 'You do not have sufficient privileges to perform this action'
     end
   end
 end
