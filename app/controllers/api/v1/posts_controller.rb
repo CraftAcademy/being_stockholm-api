@@ -25,7 +25,7 @@ class Api::V1::PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     if current_api_v1_user.admin == true && post.status == 'pending'
-      
+      post.update(status: params[:status])
       render json: { message: 'Successfully updated post status' }, status: 200
     else
       render json: { error: 'You do not have sufficient privileges to perform this action' }, status: 422
