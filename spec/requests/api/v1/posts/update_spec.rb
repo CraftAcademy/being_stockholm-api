@@ -16,7 +16,9 @@ RSpec.describe Api::V1::PostsController, type: :request do
       headers: admin_headers
       post.reload
       expect(response.status).to eq 200
-      expect(post.status).to eq 'published'
+      expect(post.published?).to eq true
+      expect(post.pending?).to eq false
+      expect(post.declined?).to eq false
       expect(json_response['message']).to eq 'Post status successfully updated'
     end
 
@@ -27,7 +29,9 @@ RSpec.describe Api::V1::PostsController, type: :request do
       headers: headers
       post.reload
       expect(response.status).to eq 422
-      expect(post.status).to eq 'pending'
+      expect(post.published?).to eq false
+      expect(post.pending?).to eq true
+      expect(post.declined?).to eq false
       expect(json_response['error']).to eq 'You do not have sufficient privileges to perform this action'
     end
   end

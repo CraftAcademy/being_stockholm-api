@@ -24,9 +24,9 @@ class Api::V1::PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    if current_api_v1_user.admin == true && post.status == 'pending'
+    if current_api_v1_user.admin == true && post.pending? == true
       post.update(status: params[:status])
-      if post.status == params[:status]
+      if post.status == params[:status] && post.pending? == false
         render json: { message: 'Post status successfully updated' }, status: 200
       else
         render json: { error: 'There was a problem updating the status of the post' }
