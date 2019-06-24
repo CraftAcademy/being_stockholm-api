@@ -20,7 +20,7 @@ let(:not_headers) { {HTTP_ACCEPT: "application/json"} }
         user_id: user.id
       }, 
       headers: headers
-      get "/api/v1/posts/"+"#{Post.last.id}", headers: headers
+      get "/api/v1/posts/#{Post.last.id}", headers: headers
     end
     
     it "returns a success response" do

@@ -1,5 +1,5 @@
 class Api::V1::PostsController < ApplicationController
-  before_action :authenticate_api_v1_user!, only: [:create]
+  before_action :authenticate_api_v1_user!, only: [:create, :update]
 
   def index
     posts = Post.all
@@ -20,10 +20,21 @@ class Api::V1::PostsController < ApplicationController
     else
       render json: { error: @post.errors.full_messages }, status: 422
     end
-
   end
 
-
+  def update
+    post = Post.find(params[:id])
+    if current_api_v1_user.admin == true && post.pending? == true
+      post.update(status: params[:status])
+      if post.status == params[:status] && post.pending? == false
+        render json: { message: 'Post status successfully updated' }, status: 200
+      else
+        render json: { error: 'There was a problem updating the status of the post' }
+      end
+    else
+      render json: { error: 'You do not have sufficient privileges to perform this action' }, status: 422
+    end
+  end
 
   private
 
