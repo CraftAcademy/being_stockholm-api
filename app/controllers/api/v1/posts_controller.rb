@@ -7,12 +7,12 @@ class Api::V1::PostsController < ApplicationController
     else
       posts = Post.all
     end
-    render json: posts, each_serializer: Posts::IndexSerializer
+    render json: posts, each_serializer: Posts::Serializer
   end
 
   def show
     post = Post.find(params[:id])
-    render json: post, serializer: Posts::ShowSerializer
+    render json: post, serializer: Posts::Serializer
   end
 
   def create
