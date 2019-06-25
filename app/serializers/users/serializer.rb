@@ -1,3 +1,3 @@
 class Users::Serializer < ActiveModel::Serializer
-  attributes :id, :uid
+  attributes :id, :uid, :level
 end
