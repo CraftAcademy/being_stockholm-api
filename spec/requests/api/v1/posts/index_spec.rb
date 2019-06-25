@@ -37,6 +37,7 @@ RSpec.describe Api::V1::PostsController, type: :request do
         expect(json_response[posts.index(post)]).to include('status')
         expect(json_response[posts.index(post)]).to include('latitude')
         expect(json_response[posts.index(post)]).to include('longitude')
+        expect(json_response[posts.index(post)]).to include('address')
       end
     end
 

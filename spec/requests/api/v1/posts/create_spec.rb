@@ -19,6 +19,7 @@ RSpec.describe Api::V1::PostsController, type: :request do
           category: 'work',
           longitude: 53.06,
           latitude: 18.03,
+          address: 'Gamvetta 145',
           user_id: user.id
         }, 
         headers: headers
@@ -48,6 +49,7 @@ RSpec.describe Api::V1::PostsController, type: :request do
           category: 'work',
           longitude: 53.06,
           latitude: 18.03,
+          address: 'Gamvetta 145',
           user_id: user.id
         },
         headers: headers
@@ -69,6 +71,7 @@ RSpec.describe Api::V1::PostsController, type: :request do
           category: 'work',
           longitude: 53.06,
           latitude: 18.03,
+          address: 'Gamvetta 145',
           user_id: user.id
         },
         headers: headers

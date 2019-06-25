@@ -9,6 +9,7 @@ RSpec.describe Post, type: :model do
     it { is_expected.to have_db_column :category }
     it { is_expected.to have_db_column :latitude }
     it { is_expected.to have_db_column :longitude }
+    it { is_expected.to have_db_column :address }
   end
 
   describe "Validations" do
@@ -17,6 +18,7 @@ RSpec.describe Post, type: :model do
     it { is_expected.to validate_presence_of(:latitude) }
     it { is_expected.to validate_presence_of(:longitude) }
     it { is_expected.to validate_length_of(:caption).is_at_most(140) }
+    it { is_expected.to validate_presence_of(:address) }
   end
 
   describe "Association" do
