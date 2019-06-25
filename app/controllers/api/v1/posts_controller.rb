@@ -43,7 +43,7 @@ class Api::V1::PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:caption, :category, :longitude, :latitude, :user_id, keys: [:image])
+    params.permit(:caption, :category, :longitude, :latitude, :user_id, :address, keys: [:image])
   end 
 
   def attach_image  

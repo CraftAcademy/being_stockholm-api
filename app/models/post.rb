@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   enum status: [:published, :pending, :declined]
   enum category: [:work, :play]
 
-  validates_presence_of :caption, :category, :latitude, :longitude
+  validates_presence_of :caption, :category, :latitude, :longitude, :address
   validates :caption, length: { maximum: 140 }
 
 end
