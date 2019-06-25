@@ -1,4 +1,4 @@
-class Posts::ShowSerializer < ActiveModel::Serializer
+class Posts::Serializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
 
   attributes :id, :status, :caption, :category, :longitude, :latitude, :created_at

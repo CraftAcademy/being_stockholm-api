@@ -2,13 +2,17 @@ class Api::V1::PostsController < ApplicationController
   before_action :authenticate_api_v1_user!, only: [:create, :update]
 
   def index
-    posts = Post.all
-    render json: posts, each_serializer: Posts::IndexSerializer
+    if params[:user_id]
+      posts = Post.where(user_id: params[:user_id])
+    else
+      posts = Post.all
+    end
+    render json: posts, each_serializer: Posts::Serializer
   end
 
   def show
     post = Post.find(params[:id])
-    render json: post, serializer: Posts::ShowSerializer
+    render json: post, serializer: Posts::Serializer
   end
 
   def create
