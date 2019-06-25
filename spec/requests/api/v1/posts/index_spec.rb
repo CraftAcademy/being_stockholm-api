@@ -7,13 +7,13 @@ RSpec.describe Api::V1::PostsController, type: :request do
 
     before do
       5.times do      
-        post = FactoryBot.create(:post, user_id: user.id)
-        post.image.attach(io: File.open('spec/fixtures/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
+        post_user = FactoryBot.create(:post, user_id: user.id)
+        post_user.image.attach(io: File.open('spec/fixtures/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
       end
 
       4.times do      
-        post = FactoryBot.create(:post, user_id: another_user.id)
-        post.image.attach(io: File.open('spec/fixtures/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
+        post_another_user = FactoryBot.create(:post, user_id: another_user.id)
+        post_another_user.image.attach(io: File.open('spec/fixtures/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
       end
     end
 
