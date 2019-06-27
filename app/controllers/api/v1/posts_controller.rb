@@ -40,6 +40,17 @@ class Api::V1::PostsController < ApplicationController
     end
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    if current_api_v1_user.admin == true
+      post.destroy
+      render json: { message: 'Post successfully deleted' }, status: 200
+    else
+      render json: { error: 'You do not have sufficient privileges to perform this action' }, status: 422
+    end
+  end
+  
+
   private
 
   def post_params
