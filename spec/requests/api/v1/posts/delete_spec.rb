@@ -17,6 +17,14 @@ RSpec.describe Api::V1::PostsController, type: :request do
       delete "/api/v1/posts/#{post.id}", headers: admin_headers
       expect(response.status).to eq 200
       expect(json_response['message']).to eq 'Post successfully deleted'
+
+      delete "/api/v1/posts/#{post_user.id}", headers: admin_headers
+      expect(response.status).to eq 200
+      expect(json_response['message']).to eq 'Post successfully deleted'
+
+      delete "/api/v1/posts/#{post_user2.id}", headers: admin_headers
+      expect(response.status).to eq 200
+      expect(json_response['message']).to eq 'Post successfully deleted'
     end
 
     it "does not delete any posts if user does not have admin privileges" do
