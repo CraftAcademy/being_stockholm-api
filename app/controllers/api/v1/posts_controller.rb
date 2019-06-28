@@ -1,5 +1,5 @@
 class Api::V1::PostsController < ApplicationController
-  before_action :authenticate_api_v1_user!, only: [:create, :update]
+  before_action :authenticate_api_v1_user!, only: [:create, :update, :destroy]
 
   def index
     if params[:user_id]
@@ -39,6 +39,20 @@ class Api::V1::PostsController < ApplicationController
       render json: { error: 'You do not have sufficient privileges to perform this action' }, status: 422
     end
   end
+
+  def destroy
+    post = Post.find(params[:id])
+    if current_api_v1_user.admin == true && post.present? == true && post.destroyed? == false
+      post.destroy
+      render json: { message: 'Post successfully deleted' }, status: 200
+    elsif current_api_v1_user.admin == false && post.user_id == current_api_v1_user.id && post.present? == true && post.destroyed? == false
+      post.destroy
+      render json: { message: 'You have successfully deleted your post' }, status: 200
+    else
+      render json: { error: 'You do not have sufficient privileges to perform this action or the post you are trying to delete does not exist' }, status: 422
+    end
+  end
+  
 
   private
 
